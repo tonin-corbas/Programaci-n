@@ -54,6 +54,6 @@ public class Mono {
                 }
             turno++;
         }
-        System.out.println("Has ganado un total de:" + vict + " veces. Y has perdido un total de:" + derr + " veces.");
+        System.out.println("Has ganado un total de:" + vict + " veces. Y has perdido un total de:" + derr + " veces. Buen juego GG");
     }
 }
