@@ -24,14 +24,15 @@ public class Mono {
                 int elec = scan.nextInt();
                 System.out.println( "Has elegido:" + insultos[elec-1]);
                 System.out.println("Ha elegido:" + respuesta[e]);
-                        if (respuesta[e].equals(insultos[elec - 1])){
+                        if (e == elec-1){
                             System.out.println("Has perdido.");
                             derr++;
-                        }else{
+                        }else {
                             System.out.println("Has ganado.");
                             vict++;
                         }
                 valorDad++;
+                e = r.nextInt(respuesta.length);
             }else{
                 System.out.println("Turno de la IA.");
                 System.out.println("Ha elegido:" + insultos[a]);
@@ -41,14 +42,15 @@ public class Mono {
                 }
                 int elec = scan.nextInt();
                 System.out.println( "Has elegido:" + respuesta[elec-1]);
-                if (insultos[elec - 1].equals(respuesta[e])){
+                if (elec-1 == a){
                     System.out.println("Has ganado.");
                     vict++;
-                }else{
-                    System.out.println("Has perdido.");
-                    derr++;
-                }
-                    valorDad = 0;
+                    }else {
+                        System.out.println("Has perdido.");
+                        derr++;
+                    }
+                valorDad = 0;
+                a = r.nextInt(insultos.length);
                 }
             turno++;
         }
