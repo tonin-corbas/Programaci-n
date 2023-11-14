@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EJ1/EJ1.iml" filepath="$PROJECT_DIR$/EJ1/EJ1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mono/Mono.iml" filepath="$PROJECT_DIR$/Mono/Mono.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Programaci-n.iml" filepath="$PROJECT_DIR$/.idea/Programaci-n.iml" />
     </modules>
   </component>
