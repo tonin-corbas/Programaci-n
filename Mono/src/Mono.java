@@ -4,14 +4,14 @@ public class Mono {
     public static void main(String[] args) {
         Random r = new Random();
         Scanner scan = new Scanner(System.in);
-        int valorDado = r.nextInt(2)+1;
+        int valorDado = r.nextInt(2)+1; //Para que comience desde el 1 y no el 0
         System.out.println(valorDado);
         int valorDad = valorDado %2;
          String[] insultos = {"1. Espero que tengas un barco para una rápida huida.","2. Si tu hermano es como tú, mejor casarse con un cerdo.","3. Mi ultima pelea acabo con mis manos llenas de sangre.","4. ¡He hablado con simios más educados que tu!"};
         String[] respuesta = {"1. ¿Por qué? ¿Acaso querías pedir uno prestado?","2. Me haces pensar que alguien ya lo ha hecho.","3. Espero que ya hayas aprendido a no tocarte la nariz.","4. Me alegra que asistieras a tu reunión familiar diaria."};
         int turno = 0;
-        int e = r.nextInt(respuesta.length);
-        int a = r.nextInt(insultos.length);
+        int e = r.nextInt(respuesta.length); //IA elige una respuesta aleatoria
+        int a = r.nextInt(insultos.length); //IA elige un insulto aleatorio
         int vict = 0;
         int derr = 0;
         while (turno < 4){
@@ -22,8 +22,8 @@ public class Mono {
                     System.out.println(insulto);
                 }
                 int elec = scan.nextInt();
-                System.out.println( "Has elegido:" + insultos[elec-1]);
-                System.out.println("Ha elegido:" + respuesta[e]);
+                System.out.println( "Has elegido:" + insultos[elec-1]); //Muestra nuestra elección del array
+                System.out.println("Ha elegido:" + respuesta[e]); //Muestra su elección del array
                         if (e == elec-1){
                             System.out.println("Has perdido.");
                             derr++;
@@ -32,7 +32,7 @@ public class Mono {
                             vict++;
                         }
                 valorDad++;
-                e = r.nextInt(respuesta.length);
+                e = r.nextInt(respuesta.length); //IA cambia de elección random para evitar respuestas iguales
             }else{
                 System.out.println("Turno de la IA.");
                 System.out.println("Ha elegido:" + insultos[a]);
@@ -50,7 +50,7 @@ public class Mono {
                         derr++;
                     }
                 valorDad = 0;
-                a = r.nextInt(insultos.length);
+                a = r.nextInt(insultos.length); //IA cambia de elección random para evitar respuestas iguales
                 }
             turno++;
         }
