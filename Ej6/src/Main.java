@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +16,19 @@ public class Main {
         System.out.println(listaDias.get(3) + ", " + listaDias.get(4));
         String primer = listaDias.get(0);
         String ultimo = listaDias.get(listaDias.size()-1);
+        System.out.println(primer+ ", " + ultimo);
+        String eliminar = listaDias.remove(4);
+        if (eliminar != null){
+            System.out.println("Eliminacion correcta");
+        }else {
+            System.out.println("No se ha podido eliminar");
+        }
+        System.out.println(listaDias);
 
+        for (String dia : listaDias){
+            System.out.println(dia);
+        }
+
+        System.out.println(listaDias.contains("Lunes"));
     }
 }
