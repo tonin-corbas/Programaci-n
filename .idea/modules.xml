@@ -11,6 +11,8 @@
       <module fileurl="file://$PROJECT_DIR$/Examen/Examen.iml" filepath="$PROJECT_DIR$/Examen/Examen.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mono/Mono.iml" filepath="$PROJECT_DIR$/Mono/Mono.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Programaci-n.iml" filepath="$PROJECT_DIR$/.idea/Programaci-n.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Reloj/Reloj.iml" filepath="$PROJECT_DIR$/Reloj/Reloj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/padel/padel.iml" filepath="$PROJECT_DIR$/padel/padel.iml" />
     </modules>
   </component>
 </project>
