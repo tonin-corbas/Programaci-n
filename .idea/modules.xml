@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Biblioteca/Biblioteca.iml" filepath="$PROJECT_DIR$/Biblioteca/Biblioteca.iml" />
       <module fileurl="file://$PROJECT_DIR$/EJ1/EJ1.iml" filepath="$PROJECT_DIR$/EJ1/EJ1.iml" />
       <module fileurl="file://$PROJECT_DIR$/EJ2/EJ2.iml" filepath="$PROJECT_DIR$/EJ2/EJ2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ej3/Ej3.iml" filepath="$PROJECT_DIR$/Ej3/Ej3.iml" />
