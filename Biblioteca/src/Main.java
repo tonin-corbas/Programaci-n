@@ -16,7 +16,7 @@ public class Main {
         estanteria.sumarLibro(L4);
         estanteria.sumarLibro(L5);
 
-        Libro L6 = new Libro("Planeta wigeta", "Vegetta777 y Willyrex", 10);
+        Libro L6 = new Libro("Planeta wigetta", "Vegetta777 y Willyrex", 10);
 
         estanteria.sumarLibro(L6);
 
