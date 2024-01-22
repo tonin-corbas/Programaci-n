@@ -39,21 +39,27 @@ public class Personaje {
                 }
                 break;
             case Aturdir:
-                aturdido.aturdidito();
+                aturdido.aturdidito(cartas.getAtc());
                 break;
         }
     }
     public void tomarloDePechito(int cantidad){
         Vida -= cantidad;
-        Vida = Math.max(0, Vida);
+        if (Vida < 0) {
+            Vida = 0;
+        }
     }
 
     public void curasion(int cantidad){
         Vida += cantidad;
     }
 
-    public void aturdidito(){
+    public void aturdidito(int cantidad){
         Aturdido = true;
+        Vida -= cantidad;
+        if (Vida < 0) {
+            Vida = 0;
+        }
     }
 
     public void quitarAturdidito() {

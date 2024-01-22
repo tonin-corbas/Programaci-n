@@ -39,9 +39,9 @@ public class Main {
 
         System.out.println("╔══════════════════════════════╗");
         if (heroe.Vida <= 0) {
-            System.out.println("║   ¡El Villano ha ganado!  ║");
+            System.out.println("║   ¡El Cerebro Anciano ha ganado!  ║");
         } else {
-            System.out.println("║   ¡El Héroe ha ganado!   ║");
+            System.out.println("║   ¡Dark Urge ha ganado!   ║");
         }
         System.out.println("╚══════════════════════════════╝");
     }
@@ -61,13 +61,18 @@ public class Main {
         Cartas cartaElegida = jugadorActual.elegir2Cartas();
         jugadorActual.aplicarEfect(cartaElegida, jugadorSiguiente);
 
-        if (cartaElegida.getTipo() != null && cartaElegida.getTipo() != Cartas.cartaTipo.Aturdir) {
-            System.out.println("╭──────────────────────────────────────╮");
-            System.out.println("│Turno de " + jugadorSiguiente.mostrarInfo() + "   │");
-            System.out.println("╰──────────────────────────────────────╯");
-            Cartas cartaElegidaSiguiente = jugadorSiguiente.elegir2Cartas();
-            jugadorSiguiente.aplicarEfect(cartaElegidaSiguiente, jugadorActual);
+        if (cartaElegida.getTipo() != null && cartaElegida.getTipo().equals(Cartas.cartaTipo.Aturdir)) {
+            return;
+        }
+
+        System.out.println("╭──────────────────────────────────────╮");
+        System.out.println("│Turno de " + jugadorSiguiente.mostrarInfo() + "   │");
+        System.out.println("╰──────────────────────────────────────╯");
+        Cartas cartaElegidaSiguiente = jugadorSiguiente.elegir2Cartas();
+        jugadorSiguiente.aplicarEfect(cartaElegidaSiguiente, jugadorActual);
+
+        if (cartaElegidaSiguiente.getTipo() != null && cartaElegidaSiguiente.getTipo().equals(Cartas.cartaTipo.Aturdir)) {
+            return;
         }
     }
-
 }
