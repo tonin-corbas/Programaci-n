@@ -6,7 +6,7 @@ public class Cartas {
     private int Atc;
 
     enum cartaTipo{
-        ATAQUE,CURACION,ATURDIR
+        Ataque,Curacion,Aturdir
     }
 
     public Cartas(String nombre, cartaTipo tipo, int atc){
@@ -16,9 +16,9 @@ public class Cartas {
     }
 
     public void mostrarInfo(){
-        System.out.println("Carta: " + Nombre);
-        System.out.println("Tipo: " + Tipo);
-        System.out.println("Ataque: " + Atc);
+        System.out.println("| Carta: " + Nombre + "| ");
+        System.out.println("   | Tipo: " + Tipo + " | ");
+        System.out.println("   | Ataque: " + Atc + "   | ");
     }
 
     public cartaTipo getTipo(){

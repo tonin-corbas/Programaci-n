@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ class Carta {
     }
 
     public void mostrarInfo() {
-        System.out.printf("\033[1;36m%s\033[0m | \033[1;35m%s\033[0m | \033[1;33m%d\033[0m%n", nombre, tipo, valor);
+        System.out.printf("%s | %s| %d%n", nombre, tipo, valor);
     }
 
     public CartaTipo getTipo() {
@@ -44,7 +45,7 @@ class Personaje {
     }
 
     public String mostrarInfo() {
-        return String.format("\033[1;32m%s\033[0m | \033[1;31mVida: %d\033[0m", nombre, vida);
+        return String.format("%s | Vida: %d", nombre, vida);
     }
 
     public boolean estaAturdido() {
@@ -88,23 +89,20 @@ class Personaje {
 
     public Carta elegirCarta() {
         Scanner scanner = new Scanner(System.in);
-        mostrarMazo();
+        Collections.shuffle(mazo);
 
-        int opcion;
-        do {
-            System.out.print("\033[1;34mElige una carta (1-" + mazo.size() + "):\033[0m ");
-            opcion = scanner.nextInt();
-        } while (opcion < 1 || opcion > mazo.size());
-
-        return mazo.get(opcion - 1);
-    }
-
-    private void mostrarMazo() {
-        System.out.println("\033[1;34mMazo disponible:\033[0m");
-        for (int i = 0; i < mazo.size(); i++) {
+        for (int i = 0; i < 2; i++) {
             System.out.print((i + 1) + ". ");
             mazo.get(i).mostrarInfo();
         }
+
+        int opcion;
+        do {
+            System.out.print("Elige una carta (1-2): ");
+            opcion = scanner.nextInt();
+        } while (opcion < 1 || opcion > 2);
+
+        return mazo.get(opcion - 1);
     }
 }
 
@@ -124,35 +122,35 @@ public class Prueba {
 
         int turno = 1;
         while (heroe.vida > 0 && villano.vida > 0) {
-            System.out.println("\033[1;96m╔══════════════════════════════╗");
-            System.out.println("║      \033[1;95m¡¡¡ Ronda " + turno + " !!!\033[1;96m      ║");
-            System.out.println("╚══════════════════════════════╝\033[0m");
+            System.out.println("╔══════════════════════════════╗");
+            System.out.println("║      ¡¡¡ Ronda " + turno + " !!!         ║");
+            System.out.println("╚══════════════════════════════╝");
             jugarRonda(heroe, villano);
             turno++;
         }
 
-        System.out.println("\033[1;96m╔══════════════════════════════╗");
+        System.out.println("╔══════════════════════════════╗");
         if (heroe.vida <= 0) {
-            System.out.println("║   \033[1;91m¡El Villano ha ganado!\033[1;96m   ║");
+            System.out.println("║   ¡El Villano ha ganado!  ║");
         } else {
-            System.out.println("║   \033[1;92m¡El Héroe ha ganado!\033[1;96m   ║");
+            System.out.println("║   ¡El Héroe ha ganado!   ║");
         }
-        System.out.println("╚══════════════════════════════╝\033[0m");
+        System.out.println("╚══════════════════════════════╝");
     }
 
     private static void jugarRonda(Personaje jugador1, Personaje jugador2) {
-        System.out.println("\033[1;96m╭────────────────────────────╮");
-        System.out.println("│   \033[1;92mTurno de " + jugador1.mostrarInfo() + "\033[1;96m   │");
-        System.out.println("╰────────────────────────────╯\033[0m");
+        System.out.println("╭────────────────────────────╮");
+        System.out.println("│   Turno de " + jugador1.mostrarInfo() + "   │");
+        System.out.println("╰────────────────────────────╯");
         Carta cartaElegida1 = jugador1.elegirCarta();
         jugador1.aplicarEfecto(cartaElegida1, jugador2);
 
         if (cartaElegida1.getTipo() != CartaTipo.ATURDIR) {
             jugador2.removerAturdimiento();
 
-            System.out.println("\033[1;96m╭────────────────────────────╮");
-            System.out.println("│   \033[1;91mTurno de " + jugador2.mostrarInfo() + "\033[1;96m   │");
-            System.out.println("╰────────────────────────────╯\033[0m");
+            System.out.println("╭────────────────────────────╮");
+            System.out.println("│   Turno de " + jugador2.mostrarInfo() + "   │");
+            System.out.println("╰────────────────────────────╯");
             Carta cartaElegida2 = jugador2.elegirCarta();
             jugador2.aplicarEfecto(cartaElegida2, jugador1);
         }
