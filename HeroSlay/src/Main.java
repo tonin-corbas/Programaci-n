@@ -58,6 +58,7 @@ public class Main {
         System.out.println("│Turno de " + jugadorActual.mostrarInfo() + "│");
         System.out.println("╰─────────────────────────────╯");
 
+        jugadorActual.quitarAturdidito();
         Cartas cartaElegida = jugadorActual.elegir2Cartas();
         jugadorActual.aplicarEfect(cartaElegida, jugadorSiguiente);
 
@@ -65,11 +66,13 @@ public class Main {
             return;
         }
 
+        jugadorSiguiente.quitarAturdidito();
         System.out.println("╭──────────────────────────────────────╮");
         System.out.println("│Turno de " + jugadorSiguiente.mostrarInfo() + "   │");
         System.out.println("╰──────────────────────────────────────╯");
         Cartas cartaElegidaSiguiente = jugadorSiguiente.elegir2Cartas();
         jugadorSiguiente.aplicarEfect(cartaElegidaSiguiente, jugadorActual);
+        jugadorSiguiente.quitarAturdidito();
 
         if (cartaElegidaSiguiente.getTipo() != null && cartaElegidaSiguiente.getTipo().equals(Cartas.cartaTipo.Aturdir)) {
             return;
