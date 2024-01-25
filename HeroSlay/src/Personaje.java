@@ -77,7 +77,7 @@ public class Personaje {
 
         int elec;
         do {
-            System.out.print("Elige una carta de erntre las dadas (1-2): ");
+            System.out.print("Elige una carta de entre las dadas (1-2): ");
             elec = scan.nextInt();
         } while (elec < 1 || elec > 2);
 
