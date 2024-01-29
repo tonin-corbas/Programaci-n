@@ -28,53 +28,60 @@ public class Main {
         Personaje heroe = new Personaje("Dark Urge", 30, new ArrayList<>(mazoCartas));
         Personaje villano = new Personaje("Cerebro Anciano", 30, new ArrayList<>(mazoCartas));
 
+        Random r = new Random();
+        int valorDado = r.nextInt(2); // 0 o 1
+
+        // Seleccionar aleatoriamente el jugador que comienza
+        Personaje jugadorActual = (valorDado == 0) ? heroe : villano;
+        Personaje jugadorSiguiente = (valorDado == 0) ? villano : heroe;
+
         int ronda = 1;
         while (heroe.Vida > 0 && villano.Vida > 0) {
             System.out.println("╔══════════════════════════════╗");
             System.out.println("║      ¡¡¡ Ronda " + ronda + " !!!         ║");
             System.out.println("╚══════════════════════════════╝");
-            inicioP(heroe, villano);
+            inicioP(jugadorActual, jugadorSiguiente);
             ronda++;
         }
 
         System.out.println("╔══════════════════════════════╗");
         if (heroe.Vida <= 0) {
+            heroe.aplicarEfect(cartaAturdir, heroe);
             System.out.println("║   ¡El Cerebro Anciano ha ganado!  ║");
         } else {
             System.out.println("║   ¡Dark Urge ha ganado!   ║");
+            villano.aplicarEfect(cartaAturdir, villano);
         }
         System.out.println("╚══════════════════════════════╝");
     }
 
-    private static void inicioP(Personaje jugador1, Personaje jugador2) {
-        Random r = new Random();
-        int valorDado = r.nextInt(2); // 0 o 1
-
-        // Seleccionar aleatoriamente el jugador que comienza
-        Personaje jugadorActual = (valorDado == 0) ? jugador1 : jugador2;
-        Personaje jugadorSiguiente = (valorDado == 0) ? jugador2 : jugador1;
-
-        System.out.println("╭─────────────────────────────╮");
-        System.out.println("│Turno de " + jugadorActual.mostrarInfo() + "│");
-        System.out.println("╰─────────────────────────────╯");
-
+    private static void inicioP(Personaje jugadorActual, Personaje jugadorSiguiente) {
+        if (!jugadorActual.isAturdido()) {
+            System.out.println("╭─────────────────────────────╮");
+            System.out.println("│Turno de " + jugadorActual.mostrarInfo() + "│");
+            System.out.println("╰─────────────────────────────╯");
+            Cartas cartaElegida = jugadorActual.elegir2Cartas();
+            jugadorActual.aplicarEfect(cartaElegida, jugadorSiguiente);
+            if (jugadorSiguiente.Vida <= 0) {
+                return;
+            }
+        } else {
+            System.out.println(jugadorActual.mostrarInfo() + " está aturdido y pierde su turno.");
+        }
         jugadorActual.quitarAturdidito();
-        Cartas cartaElegida = jugadorActual.elegir2Cartas();
-        jugadorActual.aplicarEfect(cartaElegida, jugadorSiguiente);
 
-        if (cartaElegida.getTipo() != null && cartaElegida.getTipo().equals(Cartas.cartaTipo.Aturdir)) {
-            return;
+        if (!jugadorSiguiente.isAturdido()) {
+            System.out.println("╭──────────────────────────────────────╮");
+            System.out.println("│Turno de " + jugadorSiguiente.mostrarInfo() + "   │");
+            System.out.println("╰──────────────────────────────────────╯");
+            Cartas cartaElegidaSiguiente = jugadorSiguiente.elegir2Cartas();
+            jugadorSiguiente.aplicarEfect(cartaElegidaSiguiente, jugadorActual);
+            if (jugadorActual.Vida <= 0) {
+                return;
+            }
+        } else {
+            System.out.println(jugadorSiguiente.mostrarInfo() + " está aturdido y pierde su turno.");
         }
-
         jugadorSiguiente.quitarAturdidito();
-        System.out.println("╭──────────────────────────────────────╮");
-        System.out.println("│Turno de " + jugadorSiguiente.mostrarInfo() + "   │");
-        System.out.println("╰──────────────────────────────────────╯");
-        Cartas cartaElegidaSiguiente = jugadorSiguiente.elegir2Cartas();
-        jugadorSiguiente.aplicarEfect(cartaElegidaSiguiente, jugadorActual);
-
-        if (cartaElegidaSiguiente.getTipo() != null && cartaElegidaSiguiente.getTipo().equals(Cartas.cartaTipo.Aturdir)) {
-            return;
-        }
     }
 }
