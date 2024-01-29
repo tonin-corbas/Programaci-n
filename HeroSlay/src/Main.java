@@ -72,7 +72,6 @@ public class Main {
         System.out.println("╰──────────────────────────────────────╯");
         Cartas cartaElegidaSiguiente = jugadorSiguiente.elegir2Cartas();
         jugadorSiguiente.aplicarEfect(cartaElegidaSiguiente, jugadorActual);
-        jugadorSiguiente.quitarAturdidito();
 
         if (cartaElegidaSiguiente.getTipo() != null && cartaElegidaSiguiente.getTipo().equals(Cartas.cartaTipo.Aturdir)) {
             return;
