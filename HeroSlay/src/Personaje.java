@@ -81,6 +81,7 @@ public class Personaje {
             elec = scan.nextInt();
         } while (elec < 1 || elec > 2);
 
+
         return mazo.get(elec - 1);
     }
 }

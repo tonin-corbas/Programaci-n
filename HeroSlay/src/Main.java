@@ -46,11 +46,11 @@ public class Main {
 
         System.out.println("╔══════════════════════════════╗");
         if (heroe.Vida <= 0) {
-            heroe.aplicarEfect(cartaAturdir, heroe);
+            //heroe.aplicarEfect(cartaAturdir, heroe);
             System.out.println("║   ¡El Cerebro Anciano ha ganado!  ║");
         } else {
             System.out.println("║   ¡Dark Urge ha ganado!   ║");
-            villano.aplicarEfect(cartaAturdir, villano);
+            //villano.aplicarEfect(cartaAturdir, villano);
         }
         System.out.println("╚══════════════════════════════╝");
     }
