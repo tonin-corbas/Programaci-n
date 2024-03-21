@@ -3,7 +3,7 @@ public class Producto {
     private String Nombre;
     private Double Precio;
 
-    public Producto(int codigo, String nombre, double precio){
+    public Producto(int codigo, String nombre, double precio) {
         this.Codigo = codigo;
         this.Nombre = nombre;
         this.Precio = precio;
