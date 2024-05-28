@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="Controladores.ControladorLista" >
+    <ListView fx:id="personajesList"/>
+</VBox>

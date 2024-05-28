@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="Controladores.ControladorInsert">
+    <TextField fx:id="nombreField" promptText="Nombre" styleClass="form-control"/>
+    <TextField fx:id="apellidoField" promptText="Apellido" styleClass="form-control"/>
+    <TextField fx:id="hermandadField" promptText="Hermandad" styleClass="form-control"/>
+    <TextField fx:id="idJuegoField" promptText="ID Juego" styleClass="form-control"/>
+    <Button text="Insertar" onAction="#insertPersonaje" styleClass="btn btn-success"/>
+</VBox>

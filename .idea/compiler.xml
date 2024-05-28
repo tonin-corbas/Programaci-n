@@ -4,6 +4,7 @@
     <bytecodeTargetLevel>
       <module name="Hundir-la-flota" target="17" />
       <module name="HundirFlota" target="17" />
+      <module name="ProyectoFinal" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

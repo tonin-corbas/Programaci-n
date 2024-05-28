@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="Controladores.ControladorBorrar" >
+    <TextField fx:id="idField" promptText="ID del Personaje a eliminar" styleClass="form-control"/>
+    <Button text="Eliminar" onAction="#deletePersonaje" styleClass="btn btn-danger"/>
+</VBox>
