@@ -21,6 +21,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/HundirLaFlota" />
+        <option name="gradleJvm" value="jbr-17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/HundirLaFlota" />
@@ -40,6 +41,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/ProyectoFinale" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ProyectoFinale2" />
+        <option name="gradleJvm" value="openjdk-22" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ProyectoFinale2" />
           </set>
         </option>
       </GradleProjectSettings>
