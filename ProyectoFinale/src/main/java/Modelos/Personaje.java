@@ -55,4 +55,9 @@ public class Personaje {
     public void setIdJuego(int idJuego) {
         this.idJuego = idJuego;
     }
+
+    @Override
+    public String toString() {
+        return nombre + " " + apellido;
+    }
 }

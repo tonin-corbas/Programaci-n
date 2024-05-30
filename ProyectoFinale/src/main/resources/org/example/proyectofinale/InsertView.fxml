@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Button?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="Controladores.ControladorInsert">
-    <TextField fx:id="nombreField" promptText="Nombre" styleClass="form-control"/>
-    <TextField fx:id="apellidoField" promptText="Apellido" styleClass="form-control"/>
-    <TextField fx:id="hermandadField" promptText="Hermandad" styleClass="form-control"/>
-    <TextField fx:id="idJuegoField" promptText="ID Juego" styleClass="form-control"/>
-    <Button text="Insertar" onAction="#insertPersonaje" styleClass="btn btn-success"/>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controladores.ControladorInsert"
+      spacing="10" padding="10" stylesheets="@bootstrapfx.css">
+    <TextField fx:id="nombreField" promptText="Nombre"/>
+    <TextField fx:id="apellidoField" promptText="Apellido"/>
+    <TextField fx:id="hermandadField" promptText="Hermandad"/>
+    <TextField fx:id="idJuegoField" promptText="ID del Juego"/>
+    <Button text="Insertar" onAction="#insertarPersonaje"/>
 </VBox>

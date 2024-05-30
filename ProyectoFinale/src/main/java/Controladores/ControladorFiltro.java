@@ -1,42 +1,52 @@
 package Controladores;
 
+import Modelos.Personaje;
+import org.example.proyectofinale.BBDD;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.SQLException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class ControladorFiltro {
+    @FXML
+    private ListView<Personaje> listViewPersonajes;
+    @FXML
+    private TextField puntuacionMinimaField;
+
+    private ObservableList<Personaje> personajes;
 
     @FXML
-    private TextField filterField;
+    public void initialize() {
+        personajes = FXCollections.observableArrayList();
+        listViewPersonajes.setItems(personajes);
+    }
 
     @FXML
-    private ListView<String> personajesList;
+    private void filtrarPersonajes() {
+        double puntuacionMinima = Double.parseDouble(puntuacionMinimaField.getText());
+        personajes.clear();
 
-    @FXML
-    private void filterPersonajes() {
-        String filter = filterField.getText();
-
-        String url = "jdbc:mysql://localhost:3306/proyectofinale";
-        String user = "root";
-        String password = "";
-
-        String sql = "SELECT Nombre, Apellido FROM personajes WHERE Nombre LIKE '%" + filter + "%'";
-
-        try (Connection conn = DriverManager.getConnection(url, user, password);
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-
-            personajesList.getItems().clear();
-
+        String query = "SELECT p.* FROM personajes p " +
+                "JOIN calificacion c ON p.id = c.id_personaje " +
+                "WHERE c.Puntuacion >= " + puntuacionMinima;
+        try (Connection connection = BBDD.getConnection();
+             Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                String nombre = rs.getString("Nombre");
-                String apellido = rs.getString("Apellido");
-                personajesList.getItems().add(nombre + " " + apellido);
+                Personaje personaje = new Personaje(
+                        rs.getInt("id"),
+                        rs.getString("Nombre"),
+                        rs.getString("Apellido"),
+                        rs.getString("Hermandad"),
+                        rs.getInt("id_juego")
+                );
+                personajes.add(personaje);
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.TextField?>
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="Controladores.ControladorFiltro">
-    <TextField fx:id="filterField" promptText="Filtrar por Nombre" styleClass="form-control"/>
-    <Button text="Filtrar" onAction="#filterPersonajes" styleClass="btn btn-primary"/>
-    <ListView fx:id="personajesList"/>
+<VBox xmlns:fx="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controladores.ControladorFiltro"
+      spacing="10" padding="10" stylesheets="@bootstrapfx.css">
+    <TextField fx:id="puntuacionMinimaField" promptText="Puntuación mínima"/>
+    <Button text="Filtrar" onAction="#filtrarPersonajes"/>
+    <ListView fx:id="listViewPersonajes"/>
 </VBox>

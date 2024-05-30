@@ -4,6 +4,15 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Final2" />
+        <option name="gradleJvm" value="openjdk-22" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Final2" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/Hundir la flota" />
         <option name="modules">
           <set>
@@ -29,6 +38,14 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ProyectoF3" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ProyectoF3" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/ProyectoFinal" />
         <option name="modules">
           <set>
@@ -46,10 +63,18 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/ProyectoFinale2" />
-        <option name="gradleJvm" value="openjdk-22" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/ProyectoFinale2" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ProyectoFinale3" />
+        <option name="gradleJvm" value="openjdk-22" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ProyectoFinale3" />
           </set>
         </option>
       </GradleProjectSettings>

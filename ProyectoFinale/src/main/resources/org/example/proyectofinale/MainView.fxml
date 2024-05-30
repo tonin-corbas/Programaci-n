@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="Controladores.ControladorPrincipal">
-  <top>
-    <Label text="Gestión de Personajes" styleClass="h1"/>
-  </top>
-  <center>
-    <VBox alignment="CENTER">
-      <Button text="Ver Personajes" onAction="#showListScreen" styleClass="btn btn-primary"/>
-      <Button text="Insertar Personaje" onAction="#showInsertScreen" styleClass="btn btn-primary"/>
-      <Button text="Filtrar Personajes" onAction="#showFilterScreen" styleClass="btn btn-primary"/>
-      <Button text="Eliminar Personaje" onAction="#showDeleteScreen" styleClass="btn btn-danger"/>
-    </VBox>
-  </center>
-</BorderPane>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.bootstrapfx.scene.layout.Panel?>
+
+<VBox xmlns:fx="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controladores.ControladorPrincipal"
+      spacing="10" padding="10" stylesheets="@bootstrapfx.css">
+  <Panel>
+    <Panel> <!-- Nested panel for styling -->
+      <VBox>
+        <Button text="Insertar Personaje" onAction="#mostrarPantallaInsertar"/>
+        <Button text="Filtrar Personajes" onAction="#mostrarPantallaFiltrar"/>
+        <ListView fx:id="listViewPersonajes"/>
+      </VBox>
+    </Panel>
+  </Panel>
+</VBox>

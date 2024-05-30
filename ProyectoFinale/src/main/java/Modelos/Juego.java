@@ -55,4 +55,9 @@ public class Juego {
     public void setIdEpoca(int idEpoca) {
         this.idEpoca = idEpoca;
     }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
 }
