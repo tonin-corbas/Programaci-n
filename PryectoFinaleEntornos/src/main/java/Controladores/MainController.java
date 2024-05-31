@@ -68,6 +68,15 @@ public class MainController {
             }
         });
 
+        JButton btnEraDetails = new JButton("Ver Épocas");
+        btnEraDetails.setBounds(220, 70, 150, 25);
+        frame.getContentPane().add(btnEraDetails);
+        btnEraDetails.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                viewEra();
+            }
+        });
+
         characterTableModel = new DefaultTableModel();
         characterTableModel.setColumnIdentifiers(new String[]{"Nombre", "Apellido", "Hermandad", "Juego"});
         characterTable = new JTable(characterTableModel);
@@ -106,6 +115,12 @@ public class MainController {
         new DeleteCharacterController(this);
     }
 
+    /**
+     * Abre la ventana para ver la epoca y su respectiva id.
+     */
+    private void viewEra() {
+        new EraDetailsController();
+    }
 
     /**
      * Refresca la lista de personajes en la ventana principal.

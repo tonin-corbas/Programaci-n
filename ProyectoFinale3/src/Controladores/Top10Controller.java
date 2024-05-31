@@ -5,8 +5,6 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
-import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * Controlador para ver y filtrar el top 10 de personajes.

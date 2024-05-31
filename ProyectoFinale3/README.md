@@ -36,17 +36,24 @@ Pantalla que muestra el top 10 de personajes, con opciones para ordenar ascenden
 
 ## Borrar Personajes
 
-Pantalla que muestra el top 10 de personajes, con opciones para ordenar ascendentemente o descendentemente.
+Pantalla que permite borrar personajes de la base de datos.
 
 ![Borrar Personajes](img/DeleteCharacter.png)
+
+## Ver Epoca Individual
+
+Pantalla que muestra las Epocas de la base de datos.
+
+![Borrar Personajes](img/Epoca.png)
 
 ## Uso
 
 1. **Ver Juegos y Épocas:** Muestra una lista de juegos y las épocas asociadas.
 2. **Ver Top 10 de Personajes:** Muestra los 10 personajes mejor calificados, con opciones para ordenar por puntuación.
 3. **Añadir Personaje:** Permite añadir un nuevo personaje a la base de datos.
-4. **Ver Época Individual:** Muestra los detalles de una época específica.
-5. **Eliminar Personaje:** Permite eliminar un personaje de la base de datos.
+4. **Eliminar Personaje:** Permite eliminar un personaje de la base de datos.
+5. **Ver Época Individual:** Muestra los detalles de una época específica.
+
 
 ## Conexión a la Base de Datos
 

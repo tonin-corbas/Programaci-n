@@ -72,6 +72,15 @@ public class MainController {
             }
         });
 
+        JButton btnEraDetails = new JButton("Ver Épocas");
+        btnEraDetails.setBounds(220, 70, 150, 25);
+        frame.getContentPane().add(btnEraDetails);
+        btnEraDetails.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                viewEra();
+            }
+        });
+
         characterTableModel = new DefaultTableModel();
         characterTableModel.setColumnIdentifiers(new String[]{"Nombre", "Apellido", "Hermandad", "Juego"});
         characterTable = new JTable(characterTableModel);
@@ -104,6 +113,13 @@ public class MainController {
     }
 
     /**
+     * Abre la ventana para ver la epoca y su respectiva id.
+     */
+    private void viewEra() {
+        new EraDetailsController();
+    }
+
+    /**
      * Abre la ventana para borrar un personaje.
      */
     private void deleteCharacter() {
@@ -115,7 +131,7 @@ public class MainController {
      * Refresca la lista de personajes en la ventana principal.
      */
     public void refreshCharacterList() {
-        characterTableModel.setRowCount(0); // Limpiar la tabla
+        characterTableModel.setRowCount(0);
 
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyectofinale", "root", "");
              Statement stmt = conn.createStatement();
