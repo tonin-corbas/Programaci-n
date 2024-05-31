@@ -116,6 +116,7 @@ public class AddCharacterController {
      * @throws SQLException Si ocurre un error de base de datos.
      */
     private int getGameId(String gameName) throws SQLException {
+        System.out.println("Buscando el juego: " + gameName);
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyectofinale", "root", "");
              PreparedStatement pstmt = conn.prepareStatement("SELECT id FROM juego_al_que_pertenece WHERE Nombre = ?")) {
             pstmt.setString(1, gameName);
