@@ -1,8 +1,9 @@
+
+package Model;
+
 /**
  * Clase Era para representar una época.
  */
-package Model;
-
 public class Era {
     private int id;
     private String epoca;

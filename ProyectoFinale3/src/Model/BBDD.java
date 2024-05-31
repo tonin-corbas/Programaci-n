@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Clase BBDD para Conectar la basede datos.
+ */
 public class BBDD {
     private static final String URL = "jdbc:mysql://localhost:3306/proyectofinale";
     private static final String USER = "root";
