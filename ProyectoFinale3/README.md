@@ -67,6 +67,9 @@ La aplicación se conecta a una base de datos MySQL utilizando las siguientes ta
 La estructura de estas tablas se detalla en el esquema relacional a continuación:
 
 Esquema Relacional sacado de phpMyAdmin
+
 ![Esquema Relacional](img/RelacionalPRo.png)
+
 Esquema Relacional hecho originalmente por mi
+
 ![Esquema Relacional](img/AC.drawio.png)
