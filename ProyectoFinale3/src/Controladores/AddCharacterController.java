@@ -66,7 +66,7 @@ public class AddCharacterController {
         lblGame.setBounds(50, 170, 100, 25);
         frame.getContentPane().add(lblGame);
 
-        gameComboBox = new JComboBox<>(new String[]{"Assassin's Creed", "Assassin's Creed II", "Assassin's Creed III", "Assassin's Creed IV: Black Flag", "Assassin's Creed Unity", "Assassin's Creed Origins", "Assassin's Creed Odyssey", "Assassin's Creed Mirage", "Assassin's Creed Shadows"});
+        gameComboBox = new JComboBox<>(new String[]{"Assassin's Creed", "Assassin's Creed II", "Assassin's Creed III", "Assassin's Creed IV: Black Flag", "Assassin's Creed: Unity", "Assassin's Creed Origins", "Assassin's Creed Odyssey", "Assassin's Creed Mirage", "Assassin's Creed Shadows"});
         gameComboBox.setBounds(150, 170, 200, 25);
         frame.getContentPane().add(gameComboBox);
 
